@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="neom">
+  <ClassDiagramComponents>
+    <Class name="Sorting" package="neom" visibility="public" xPosition="29.0" yPosition="338.0">
+      <Fields>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="date" type="String" visibility="package"/>
+        <Field name="age" type="String" visibility="package"/>
+        <Field name="price" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="age"/>
+          <Argument type="int" name="price"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Activiteis" package="neom" visibility="public" xPosition="855.0" yPosition="29.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="availableActiviteis" returnType="void" visibility="public"/>
+        <Method name="sortActiviteis" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="ActiviteisList"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Booking" package="neom" visibility="public" xPosition="457.0" yPosition="27.0">
+      <Fields>
+        <Field name="bookList" type="int" visibility="private"/>
+        <Field name="bookMsg1" type="String" visibility="public"/>
+        <Field name="input" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="bookList"/>
+          <Argument type="String" name="bookMsg1"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Booking" name="object"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="choice"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getBookList" returnType="int" visibility="public"/>
+        <Method name="getPrices" returnType="int" visibility="public">
+          <Argument type="int" name="prices"/>
+        </Method>
+        <Method name="setBookList" returnType="void" visibility="public">
+          <Argument type="int" name="bookList"/>
+        </Method>
+        <Method name="bookActivitey" returnType="int" visibility="public">
+          <Argument type="int" name="bookList"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="City" package="neom" visibility="public" xPosition="56.0" yPosition="169.0">
+      <Fields>
+        <Field name="input" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="public_facilities" returnType="void" visibility="public">
+          <Argument type="int" name="publicFacilitiesList"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NEOM" package="neom" visibility="public" xPosition="95.0" yPosition="27.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="reservation" package="neom" visibility="public" xPosition="414.0" yPosition="415.0">
+      <Fields>
+        <Field name="touristsInfo" type="Tourists" visibility="private"/>
+        <Field name="touristsBook" type="Booking" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Tourists" name="touristsInfo"/>
+          <Argument type="Booking" name="touristsBook"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tourists" package="neom" visibility="public" xPosition="820.0" yPosition="215.0">
+      <Fields>
+        <Field name="Lname" type="String" visibility="private"/>
+        <Field name="Fname" type="String" visibility="private"/>
+        <Field name="phoneNumper" type="String" visibility="private"/>
+        <Field name="input" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Fn"/>
+          <Argument type="String" name="Ln"/>
+          <Argument type="String" name="phoneNO"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Tourists" name="object"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setFname" returnType="void" visibility="public">
+          <Argument type="String" name="F"/>
+        </Method>
+        <Method name="setLname" returnType="void" visibility="public">
+          <Argument type="String" name="L"/>
+        </Method>
+        <Method name="setPhone" returnType="void" visibility="public">
+          <Argument type="String" name="N"/>
+        </Method>
+        <Method name="getFname" returnType="String" visibility="public"/>
+        <Method name="getLname" returnType="String" visibility="public"/>
+        <Method name="getPhone" returnType="String" visibility="public"/>
+        <Method name="touristsInfo" returnType="void" visibility="public"/>
+        <Method name="validPhoneNumber" returnType="void" visibility="public">
+          <Argument type="String" name="num"/>
+        </Method>
+        <Method name="validFname" returnType="void" visibility="public">
+          <Argument type="String" name="Fname"/>
+        </Method>
+        <Method name="validLname" returnType="void" visibility="public">
+          <Argument type="String" name="Lname"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="touristsBook" source="neom.reservation" target="neom.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="touristsInfo" source="neom.reservation" target="neom.Tourists" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
